@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@fedify/fedify": "jsr:@fedify/fedify@^0.3.0",
+    "badge-maker": "npm:badge-maker@^3.3.1",
+    "hono": "https://deno.land/x/hono@v4.1.3/mod.ts"
+  },
+  "tasks": {
+    "start": "deno run --unstable-kv --allow-env=NODE_V8_COVERAGE,JEST_WORKER_ID --allow-read --allow-net main.ts"
+  }
+}
