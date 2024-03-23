@@ -25,6 +25,10 @@ Optionally, you can specify the following options in the query string:
     `flat-square`, `for-the-badge`, `social`.  If not specified, it will be
     `social`.
 
+Example:
+
+    https://fedi-badge.deno.dev/@USER@DOMAIN/followers.svg?style=flat
+
 Note that each badge is cached for an hour, so you may not see the immediate
 change after your social media activity.
 
