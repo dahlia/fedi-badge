@@ -1,4 +1,4 @@
-import { Collection, isActor, lookupObject } from "@fedify/fedify";
+import { Collection, isActor, lookupObject } from "@fedify/fedify/vocab";
 import { makeBadge } from "badge-maker";
 import { Hono } from "hono";
 
@@ -76,6 +76,4 @@ app.get(
   },
 );
 
-if (import.meta.main) {
-  Deno.serve(app.fetch);
-}
+export default app;
