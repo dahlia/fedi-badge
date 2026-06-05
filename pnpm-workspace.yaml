@@ -1,0 +1,10 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@fedify/fedify@2.2.4'
+  - '@fedify/vocab-runtime@2.2.4'
+  - '@fedify/vocab-tools@2.2.4'
+  - '@fedify/vocab@2.2.4'
+  - '@fedify/webfinger@2.2.4'

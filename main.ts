@@ -4,11 +4,16 @@ import { Hono } from "hono";
 
 type Counter = "followers" | "following" | "posts";
 
-const kv = await Deno.openKv();
+type Bindings = { CACHE: KVNamespace };
 
-async function count(handle: string, counter: Counter): Promise<number | null> {
-  const cached = await kv.get<number | null>(["count", handle, counter]);
-  if (cached != null && cached.value != null) return cached.value;
+async function count(
+  kv: KVNamespace,
+  handle: string,
+  counter: Counter,
+): Promise<number | null> {
+  const key = `count:${handle}:${counter}`;
+  const cached = await kv.get<number>(key, { type: "json" });
+  if (cached != null) return cached;
   let actor;
   try {
     actor = await lookupObject(handle);
@@ -27,11 +32,13 @@ async function count(handle: string, counter: Counter): Promise<number | null> {
     return null;
   }
   const num = collection?.totalItems ?? null;
-  await kv.set(["count", handle, counter], num, { expireIn: 60 * 60 * 1000 });
+  if (num != null) {
+    await kv.put(key, String(num), { expirationTtl: 3600 });
+  }
   return num;
 }
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.get("/", (c) => c.redirect("https://github.com/dahlia/fedi-badge"));
 
@@ -41,6 +48,7 @@ app.get(
     const { handle, counter } = c.req.param();
     const query = c.req.query();
     const num = await count(
+      c.env.CACHE,
       handle,
       counter === "followers.svg"
         ? "followers"
@@ -57,8 +65,8 @@ app.get(
         ["plastic", "flat", "flat-square", "for-the-badge", "social"].includes(
             query.style,
           )
-          // deno-lint-ignore no-explicit-any
-          ? query.style as unknown as any
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ? query.style as any
           : "social";
     const svg = makeBadge({
       label: query.label == null ? `Follow ${handle}` : query.label,

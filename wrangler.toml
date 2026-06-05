@@ -1,0 +1,9 @@
+name = "fedi-badge"
+main = "main.ts"
+compatibility_date = "2026-06-05"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "bf2f8af0336b4c19bc4a50c55c4924dd"
+preview_id = "81ec1a6c57d849968f7b76a8d2ed4908"

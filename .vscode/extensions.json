@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "denoland.vscode-deno",
+    "cloudflare.cloudflare-workers-bindings-extension",
     "streetsidesoftware.code-spell-checker"
   ]
 }

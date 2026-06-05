@@ -8,15 +8,15 @@ Pleroma, Misskey, Pixelfed, and so on.[^1]
 
 Here is an example of a fedi badge:
 
-https://fedi-badge.deno.dev/@hongminhee@fosstodon.org/followers.svg
+<https://fedi-badge.minhee.org/@hongminhee@fosstodon.org/followers.svg>
 
-![Follow @hongminhee@fosstodon.org](https://fedi-badge.deno.dev/@hongminhee@fosstodon.org/followers.svg)
+![Follow @hongminhee@fosstodon.org](https://fedi-badge.minhee.org/@hongminhee@fosstodon.org/followers.svg)
 
 The pattern of the URL is:
 
-    https://fedi-badge.deno.dev/@USER@DOMAIN/followers.svg
-    https://fedi-badge.deno.dev/@USER@DOMAIN/following.svg
-    https://fedi-badge.deno.dev/@USER@DOMAIN/posts.svg
+    https://fedi-badge.minhee.org/@USER@DOMAIN/followers.svg
+    https://fedi-badge.minhee.org/@USER@DOMAIN/following.svg
+    https://fedi-badge.minhee.org/@USER@DOMAIN/posts.svg
 
 Optionally, you can specify the following options in the query string:
 
@@ -28,7 +28,7 @@ Optionally, you can specify the following options in the query string:
 
 Example:
 
-    https://fedi-badge.deno.dev/@USER@DOMAIN/followers.svg?style=flat
+    https://fedi-badge.minhee.org/@USER@DOMAIN/followers.svg?style=flat
 
 Note that each badge is cached for an hour, so you may not see the immediate
 change after your social media activity.
