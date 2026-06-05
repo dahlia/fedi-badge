@@ -8,9 +8,9 @@ Pleroma, Misskey, Pixelfed, and so on.[^1]
 
 Here is an example of a fedi badge:
 
-<https://fedi-badge.minhee.org/@hongminhee@fosstodon.org/followers.svg>
+<https://fedi-badge.minhee.org/@hongminhee@hollo.social/followers.svg>
 
-![Follow @hongminhee@fosstodon.org](https://fedi-badge.minhee.org/@hongminhee@fosstodon.org/followers.svg)
+![Follow @hongminhee@hollo.social](https://fedi-badge.minhee.org/@hongminhee@hollo.social/followers.svg)
 
 The pattern of the URL is:
 
