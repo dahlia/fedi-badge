@@ -3,6 +3,10 @@ main = "main.ts"
 compatibility_date = "2026-06-05"
 compatibility_flags = ["nodejs_compat"]
 
+[[rules]]
+type = "Text"
+globs = ["**/*.svg"]
+
 [[kv_namespaces]]
 binding = "CACHE"
 id = "bf2f8af0336b4c19bc4a50c55c4924dd"
